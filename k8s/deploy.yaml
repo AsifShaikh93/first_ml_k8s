@@ -20,13 +20,9 @@ spec:
         ports:
         - containerPort: 8000
         imagePullPolicy: IfNotPresent
-        volumeMounts:                   # <--- added
-        - name: diabetes-model-volume
-          mountPath: /mnt/models
-      volumes:                          # <--- added
-      - name: diabetes-model-volume
-        persistentVolumeClaim:
-          claimName: diabetes-model-pvc  
+        env:
+        - name: MODEL_URI
+          value: "https://model-registry/models/diabetes/v3/model.pkl"
 ---
 apiVersion: v1
 kind: Service
