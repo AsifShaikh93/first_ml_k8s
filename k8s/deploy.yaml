@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: diabetes-api
-        image: asif1993/second_ml:85b0a49
+        image: asif1993/second_ml:9d0ba5e
         ports:
         - containerPort: 8000
         imagePullPolicy: IfNotPresent
